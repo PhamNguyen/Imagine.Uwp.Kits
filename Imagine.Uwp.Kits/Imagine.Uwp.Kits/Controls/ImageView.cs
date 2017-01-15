@@ -13,14 +13,14 @@ namespace Imagine.Uwp.Kits.Controls
     /// <summary>
     /// Đây là control để hiển thị hình ảnh với 2 chế độ. Nếu không có Source thì mặc định hiển thị Placeholder. Ngoài ra cho phép tạo hình ảnh tròn thông qua thuộc tính CornerRadius
     /// </summary>
-    public class SuperImage : Control
+    public class ImageView : Control
     {
         private ImageBrush PART_DisplayImage;
         private Border PART_PlaceholderContainer;
         private Border PART_DisplayContainer;
 
         #region PlaceholderImageSource
-        public DependencyProperty PlaceholderImageSourceProperty = DependencyProperty.Register("PlaceholderImageSource", typeof(ImageSource), typeof(SuperImage), new PropertyMetadata(null));
+        public DependencyProperty PlaceholderImageSourceProperty = DependencyProperty.Register("PlaceholderImageSource", typeof(ImageSource), typeof(ImageView), new PropertyMetadata(null));
 
         public ImageSource PlaceholderImageSource
         {
@@ -30,7 +30,7 @@ namespace Imagine.Uwp.Kits.Controls
         #endregion
 
         #region Source
-        public DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(SuperImage), new PropertyMetadata(null));
+        public DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(ImageSource), typeof(ImageView), new PropertyMetadata(null));
 
         public ImageSource Source
         {
@@ -40,7 +40,7 @@ namespace Imagine.Uwp.Kits.Controls
         #endregion
 
         #region Stretch
-        public DependencyProperty StretchProperty = DependencyProperty.Register("Stretch", typeof(Stretch), typeof(SuperImage), new PropertyMetadata(Windows.UI.Xaml.Media.Stretch.None));
+        public DependencyProperty StretchProperty = DependencyProperty.Register("Stretch", typeof(Stretch), typeof(ImageView), new PropertyMetadata(Windows.UI.Xaml.Media.Stretch.None));
 
         public Windows.UI.Xaml.Media.Stretch Stretch
         {
@@ -50,7 +50,7 @@ namespace Imagine.Uwp.Kits.Controls
         #endregion
 
         #region CornerRadius
-        public DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(SuperImage), new PropertyMetadata(new CornerRadius(0)));
+        public DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(ImageView), new PropertyMetadata(new CornerRadius(0)));
 
         public CornerRadius CornerRadius
         {
@@ -59,9 +59,9 @@ namespace Imagine.Uwp.Kits.Controls
         }
         #endregion
 
-        public SuperImage()
+        public ImageView()
         {
-            this.DefaultStyleKey = typeof(SuperImage);
+            this.DefaultStyleKey = typeof(ImageView);
         }
 
         private void PART_DisplayImage_ImageFailed(object sender, ExceptionRoutedEventArgs e)

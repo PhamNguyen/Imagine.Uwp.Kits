@@ -107,6 +107,9 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AHeadIcon.xaml.cs">
+      <DependentUpon>AHeadIcon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Base\BaseListViewItem.cs" />
     <Compile Include="Base\BaseViewModel.cs" />
     <Compile Include="Base\GroupWrapperList.cs" />
@@ -126,7 +129,7 @@
     <Compile Include="Controls\RingView.xaml.cs">
       <DependentUpon>RingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SuperImage.cs" />
+    <Compile Include="Controls\ImageView.cs" />
     <Compile Include="Converters\BoolToVisibility.cs" />
     <Compile Include="Converters\EncodedHtmlToStringJsonConverter.cs" />
     <Compile Include="Converters\StringToBoolJsonConverter.cs" />
@@ -184,6 +187,10 @@
     <Content Include="Assets\OnePixel.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Assets\AHeadIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\GifView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

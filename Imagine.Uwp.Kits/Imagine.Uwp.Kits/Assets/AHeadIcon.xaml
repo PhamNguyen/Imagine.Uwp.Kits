@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="Imagine.Uwp.Kits.Assets.AHeadIcon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Imagine.Uwp.Kits.Assets"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid>
+            <Grid Name="backgroundGrid"
+                  Visibility="Visible">
+                <Ellipse Fill="{x:Bind Background}"
+                         Name="Fill"
+                         Visibility="Visible" />
+            </Grid>
+            <Path Data="M137.81803894043,0L184.643007278442,0 285.305099487305,95.4539799690247 261.901531219482,117.647665023804 184.027824401855,191.499794006348 138.415386199951,191.499794006348 137.81803894043,190.950233459473 221.932691574097,111.137518882751 0,111.137518882751 0,79.7704448699951 221.932691574097,79.7704448699951z"
+                  Stretch="Uniform"
+                  Fill="{x:Bind Foreground}"
+                  Margin="8"
+                  RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="270" />
+                            <ScaleTransform ScaleX="1"
+                                            ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </Grid>
+</UserControl>
