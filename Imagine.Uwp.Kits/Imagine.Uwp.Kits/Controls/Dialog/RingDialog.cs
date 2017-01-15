@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls.Primitives;
 
-namespace Imagine.Uwp.Kits.Dialog
+namespace Imagine.Uwp.Kits.Controls.Dialog
 {
     public class RingDialog
     {

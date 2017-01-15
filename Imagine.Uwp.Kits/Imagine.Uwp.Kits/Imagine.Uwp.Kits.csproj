@@ -107,9 +107,92 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialog\RingDialog.cs" />
+    <Compile Include="Base\BaseListViewItem.cs" />
+    <Compile Include="Base\BaseViewModel.cs" />
+    <Compile Include="Base\GroupWrapperList.cs" />
+    <Compile Include="Base\Interfaces\IDetailViewModel.cs" />
+    <Compile Include="Base\Interfaces\IListViewModel.cs" />
+    <Compile Include="Base\ObservableList.cs" />
+    <Compile Include="Base\ObservableModel.cs" />
+    <Compile Include="Base\PairItem.cs" />
+    <Compile Include="Controls\GifView.xaml.cs">
+      <DependentUpon>GifView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HtmlToXaml\Html2XamlProcessor.cs" />
+    <Compile Include="Controls\HtmlToXaml\RichTextBlockProperties.cs" />
+    <Compile Include="Controls\IconButton.xaml.cs">
+      <DependentUpon>IconButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SuperImage.cs" />
+    <Compile Include="Converters\BoolToVisibility.cs" />
+    <Compile Include="Converters\EncodedHtmlToStringJsonConverter.cs" />
+    <Compile Include="Converters\StringToBoolJsonConverter.cs" />
+    <Compile Include="Converters\StringToDoubleJsonConverter.cs" />
+    <Compile Include="Converters\StringToIntJsonConverter.cs" />
+    <Compile Include="Converters\StringToLongJsonConverter.cs" />
+    <Compile Include="Triggers\CompareStateTrigger.cs" />
+    <Compile Include="Triggers\CompositeStateTrigger.cs" />
+    <Compile Include="Triggers\ControlSizeTrigger.cs" />
+    <Compile Include="Triggers\DeviceFamilyStateTrigger.cs" />
+    <Compile Include="Triggers\EqualsStateTrigger.cs" />
+    <Compile Include="Triggers\FullScreenModeTrigger.cs" />
+    <Compile Include="Triggers\HostedStateTrigger.cs" />
+    <Compile Include="Triggers\InputTypeTrigger.cs" />
+    <Compile Include="Triggers\IsFalseStateTrigger.cs" />
+    <Compile Include="Triggers\IsNullOrEmptyStateTrigger.cs" />
+    <Compile Include="Triggers\IsTypePresentStateTrigger.cs" />
+    <Compile Include="Triggers\ITriggerValue.cs" />
+    <Compile Include="Triggers\NetworkConnectionStateTrigger.cs" />
+    <Compile Include="Triggers\NotEqualStateTrigger.cs" />
+    <Compile Include="Triggers\OrientationStateTrigger.cs" />
+    <Compile Include="Triggers\RegexStateTrigger.cs" />
+    <Compile Include="Triggers\UserHandPreferenceStateTrigger.cs" />
+    <Compile Include="Triggers\UserInteractionModeTrigger.cs" />
+    <Compile Include="Triggers\WeakEventListener.cs" />
+    <Compile Include="Controls\Dialog\RingDialog.cs" />
+    <Compile Include="Extentions\ListViewBaseExtentions.cs" />
+    <Compile Include="Extentions\PageExtentions.cs" />
+    <Compile Include="Extentions\StoryboardExtentions.cs" />
+    <Compile Include="Extentions\StringExtentions.cs" />
+    <Compile Include="Models\ClientInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BackgroundThread.cs" />
+    <Compile Include="Services\HttpService.cs" />
+    <Compile Include="Services\NetworkService.cs" />
+    <Compile Include="Services\PlatformService.cs" />
+    <Compile Include="Services\StorageService.cs" />
+    <Compile Include="Utilities\ActionHelper.cs" />
+    <Compile Include="Utilities\Base32.cs" />
+    <Compile Include="Utilities\BaseRC4.cs" />
+    <Compile Include="Utilities\DateTimeHelper.cs" />
+    <Compile Include="Utilities\HexToRGBConverter.cs" />
+    <Compile Include="Utilities\ImageHelper.cs" />
+    <Compile Include="Utilities\MD5Core.cs" />
+    <Compile Include="Utilities\ParseHelper.cs" />
+    <Compile Include="Utilities\ToastHelper.cs" />
+    <Compile Include="Utilities\TypingHelper.cs" />
+    <Compile Include="Utilities\UIHelper.cs" />
+    <Compile Include="Utilities\UserAgentHelper.cs" />
+    <Compile Include="Utilities\VisualTreeSavior.cs" />
+    <Compile Include="Utilities\ZipHelper.cs" />
     <EmbeddedResource Include="Properties\Imagine.Uwp.Kits.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\OnePixel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\GifView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\IconButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
