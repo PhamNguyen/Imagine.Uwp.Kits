@@ -172,6 +172,9 @@
     <Compile Include="Utilities\BaseRC4.cs" />
     <Compile Include="Utilities\DateTimeHelper.cs" />
     <Compile Include="Utilities\HexToRGBConverter.cs" />
+    <Compile Include="Utilities\HttpHelper\HttpHelper.cs" />
+    <Compile Include="Utilities\HttpHelper\HttpHelperRequest.cs" />
+    <Compile Include="Utilities\HttpHelper\HttpHelperResponse.cs" />
     <Compile Include="Utilities\ImageHelper.cs" />
     <Compile Include="Utilities\MD5Core.cs" />
     <Compile Include="Utilities\ParseHelper.cs" />
