@@ -16,22 +16,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Media;
 
 namespace Imagine.Uwp.Kits.Extentions
 {
     public static class ListViewBaseExtentions
     {
-        /// <summary>
-        /// Scrolls the list to bring the specified data item into view. Đây là hàm đã gọi thêm hàm UpdateLayout() trước khi gọi hàm ScrollIntoView(...)
-        /// </summary>
-        /// <param name="currentListView"></param>
-        /// <param name="index">Vị trí của phần tử sẽ scroll tới trong list</param>
-        /// <returns>Return True nếu scroll thành công, ngược lại return False.</returns>
-        public static void BringIntoView(this ListViewBase currentListView, object item)
+
+        public static void BringIntoView(this ListViewBase currentListView, object item = null)
         {
-            currentListView.UpdateLayout();
-            currentListView.ScrollIntoView(item, ScrollIntoViewAlignment.Leading);
+            if (item != null)
+            {
+                currentListView.UpdateLayout();
+                currentListView.ScrollIntoView(item, ScrollIntoViewAlignment.Leading);
+            }
+            else
+            {
+                ScrollLast(currentListView);
+            }
+        }
+
+        private static void ScrollLast(ListViewBase currentListView)
+        {
+            var scrollView = currentListView.GetScrollViewer();
+            scrollView.UpdateLayout();
+            scrollView.ChangeView(0, scrollView.ExtentHeight, null);
+        }
+
+        public static ScrollViewer GetScrollViewer(this DependencyObject element)
+        {
+            if (element is ScrollViewer)
+            {
+                return (ScrollViewer)element;
+            }
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(element); i++)
+            {
+                var child = VisualTreeHelper.GetChild(element, i);
+
+                var result = GetScrollViewer(child);
+                if (result == null)
+                {
+                    continue;
+                }
+                else
+                {
+                    return result;
+                }
+            }
+
+            return null;
         }
     }
 }
