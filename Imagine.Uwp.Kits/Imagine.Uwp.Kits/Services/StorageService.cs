@@ -259,31 +259,6 @@ namespace Imagine.Uwp.Kits.Services
             return true;
         }
 
-        public static async Task<StorageFile> PickSinglePhoto()
-        {
-            FileOpenPicker photoPicker = GetPhotoPicker();
-
-            return await photoPicker.PickSingleFileAsync();
-        }
-
-        public static async Task<IReadOnlyList<StorageFile>> PickMultiPhoto()
-        {
-            FileOpenPicker photoPicker = GetPhotoPicker();
-
-            return await photoPicker.PickMultipleFilesAsync();
-        }
-
-        private static FileOpenPicker GetPhotoPicker()
-        {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-
-            return openPicker;
-        }
 
     }
 }

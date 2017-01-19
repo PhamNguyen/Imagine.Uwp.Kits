@@ -14,6 +14,8 @@ using Windows.Networking.Connectivity;
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.System.Profile;
 
@@ -184,6 +186,32 @@ namespace Imagine.Uwp.Kits.Services
         public static async void ShowMessageBox(string content, string title)
         {
             await new Windows.UI.Popups.MessageDialog(content, title).ShowAsync();
+        }
+
+        public static async Task<StorageFile> PickSinglePhoto()
+        {
+            FileOpenPicker photoPicker = GetPhotoPicker();
+
+            return await photoPicker.PickSingleFileAsync();
+        }
+
+        public static async Task<IReadOnlyList<StorageFile>> PickMultiPhoto()
+        {
+            FileOpenPicker photoPicker = GetPhotoPicker();
+
+            return await photoPicker.PickMultipleFilesAsync();
+        }
+
+        private static FileOpenPicker GetPhotoPicker()
+        {
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
+
+            return openPicker;
         }
     }
 }
