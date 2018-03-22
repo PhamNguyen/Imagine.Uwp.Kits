@@ -49,10 +49,12 @@ namespace Imagine.Uwp.Kits
                 if (inputs != null)
                     contents = inputs.ToList();
 
+#if DEBUG
                 foreach (var content in contents)
                 {
                     Debug.WriteLine(content.ToString());
-                }
+                } 
+#endif
 
                 HttpClient httpClient = new HttpClient();
 
@@ -129,11 +131,6 @@ namespace Imagine.Uwp.Kits
                 Debug.WriteLine("Host: {0}", domain);
 
                 var contents = new List<KeyValuePair<string, string>>();
-
-                if (!String.IsNullOrEmpty(data))
-                {
-                    contents.Add(new KeyValuePair<string, string>("data", BaseRC4.Encrypt("153748f6d14&#@!#b6108179512d20%!@35D!#84428550a", data)));
-                }
 
                 var httpClient = new HttpClient();
 
