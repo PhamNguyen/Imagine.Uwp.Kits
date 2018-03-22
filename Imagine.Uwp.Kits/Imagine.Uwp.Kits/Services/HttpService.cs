@@ -68,6 +68,7 @@ namespace Imagine.Uwp.Kits
             }
             catch (Exception ex)
             {
+                Debug.Write(ex.Message);
             }
 
             return null;
